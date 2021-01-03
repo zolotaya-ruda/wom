@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WOM</title>
+  <link rel="stylesheet" href="{% static 'admin/css/rrr.css' %}">
+  <link rel="shortcut icon" href="{% static 'admin/img/favicon.ico' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+  
+
+<header class="header">
+  <div class = 'bord'>
+    <div class="cont_int">
+
+      <div class="box">
+  <div class="container-1">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="search" id="search" placeholder="  Поиск по артистам ...  " />
+
+
+      <div class="wrapper">
+        <input type="checkbox" id="check-menu">
+        <label for="check-menu">ЖАНРЫ </label>
+        <div class="burger-line first"></div>
+        <div class="burger-line second"></div>
+        <div class="burger-line third"></div>
+        <div class="burger-line fourth"></div>
+    
+        <nav class="main-menu">
+            <a href="#">R&B</a>
+            <a href="#">Hip-Hop</a>
+            <a href="#">Rap</a>
+            <a href="#">Trap</a>
+        </nav>
+ 
+</div>
+</div>
+</div>
+    <div class="middle">
+    <button class ="button-hover">
+      <span> Правила </span>
+    </button>
+      <button class ="button-hover">
+      <span>  Главная </span>
+    </button>
+    </div>
+    
+</header>
+
+<div class="wel">
+  
+
+
+</div>
+{% for track in track%}
+<div id ="tl">
+ <div class="profile-img"></div>
+<button class="button-hovers">
+      <div class="heart-btn">
+     
+        <div class="content">
+       
+       
+      </div>
+    </div>
+
+    
+ 
+    <span>{{track.artist.username}}</span>
+  </button>
+  <div class="description">
+Шатаут гурам всем Липецким пацанам с района ,
+    вышел дроп слушайте с наслаждением души . Диана.
+</div>
+<audio controls preload="metadata">
+  <source src="{{track.add_mus}}" type="audio/ogg">
+</audio>
+</div>
+{%endfor%}
+</body>
+</html>

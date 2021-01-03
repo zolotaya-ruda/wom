@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="shortcut icon" href="{% static 'admin/img/favicon.ico' %}">
+</head>
+<body>
+	<h1>Удаление</h1>
+	
+	<form method = 'post'>
+		{%csrf_token%}
+		<input type="submit" name="Удалить">
+	</form>
+</body>
+</html>

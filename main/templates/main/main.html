@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <title>WOM</title>
+  <link rel="stylesheet" href="{% static 'admin/css/site.css' %}">
+  <link rel="shortcut icon" href="{% static 'admin/img/favicon.ico' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+  
+<header class="header">
+  <div class = 'bord'>
+    <div class="cont_int">
+      <div class="box">
+  <div class="container-1">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <form action="{% url 'search_results' %}" method="get">
+        <input id="search" name="q" type="search" placeholder="  Поиск по исполнителям ...  " >
+      </form>
+
+      <div class="wrapper">
+        <input type="checkbox" id="check-menu">
+        <label for="check-menu">ЖАНРЫ </label>
+        <div class="burger-line first"></div>
+        <div class="burger-line second"></div>
+        <div class="burger-line third"></div>
+        <div class="burger-line fourth"></div>
+      
+        <nav class="main-menu">
+            {% for genre in genre %}
+            <a href="{% url 'genre' genre.pk %}">{{genre.name}}</a>
+            {% endfor %}
+        </nav>
+      
+</div>
+</div>
+</div>
+    {% if request.user.is_authenticated %}
+    <div class="middle">
+
+        <a class="button-hover" href="#">Правила</a> 
+        <a class="button-hover" href="{% url 'cabinet' %}">Кабинет</a>
+        <a class="button-hover" href="{% url 'logout' %}">Выйти</a> 
+    
+    </div>
+    {% else %}
+    <div class="middle">
+        
+        <a class="button-hover" href="#">Правила</a> 
+        <a class="button-hover" href="{% url 'login' %}">Войти</a> 
+        <a class="button-hover" href="{% url 'reg' %}">Зарегестрироваться</a>
+    
+    </div>
+    {% endif %}
+</header>
+
+<div class="wel">
+
+</div>
+{% for track in track %}
+<div id ="tl">
+ <img class="profile-img" src="{{track.opis.img.url}}">
+  <a class="button-hovers" href="{% url 'viewuser' track.artist.pk %}">{{track.artist}}</a>
+
+  <div class="description">
+{{track.text}}
+
+</div>
+<audio controls preload="metadata">
+  <source src="{{track.add_mus}}" type="audio/ogg">
+</audio>
+</div>
+{% endfor %}
+</body>
+</html>

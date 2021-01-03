@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>{{current.name}}</title>
+	
+	<link rel="shortcut icon" href="{% static 'admin/img/favicon.ico' %}">
+</head>
+<body>
+	<div>
+		<a href="{%url 'main'%}">Main</a>
+		{%for genre in genre%}
+		<a href="{%url 'genre' genre.pk%}">{{genre.name}}</a>
+		{%endfor%}
+	</div>
+	<div>
+		{%for track in bbs%}
+		<a href="{%url 'viewuser' track.artist.pk%}">{{track.artist.username}}</a>
+		
+		<h2>{{track.song}}</h2>
+		<h3>{{track.genre}}</h3>
+	
+		<audio src = {{track.add_mus.url}} controls></audio>
+		{%endfor%}
+	</div>
+</body>
+</html>

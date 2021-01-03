@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+{% load bootstrap4 %}
+<head>
+	<title></title>
+	<link rel="shortcut icon" href="{% static 'admin/img/favicon.ico' %}">
+</head>
+<body>
+<form method="POST" enctype="multipart/form-data">
+	{% bootstrap_css %}
+	{% csrf_token %}
+    {%bootstrap_form form%}
+    <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<title></title>
+	<link rel="shortcut icon" href="{% static 'admin/img/favicon.ico' %}">
+</head>
+<body>
+	{%for track in object_list%}
+		<a href="{%url 'viewuser' track.artist.pk%}">{{track.artist.username}}</a>
+		
+		<h2>{{track.song}}</h2>
+		<h3>{{track.genre}}</h3>
+		{%if request.user == track.artist%}
+			<a href="{% url 'edit' track.id%}">Редактировать</a>
+			<a href="{% url 'del' track.id %}">Удалить</a>
+		{%endif%}
+		<audio src = {{track.add_mus.url}} controls></audio>
+	{%endfor%}
+</body>
+</html>

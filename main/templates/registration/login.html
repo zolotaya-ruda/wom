@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+{% load bootstrap4 %}
+<head>
+	<title>Вход</title>
+</head>
+<body>
+	{% if user.is_authenticated %}
+	<p>Вы уже выполнили вход</p>
+	<p>{{request.user}}</p>
+	<p><a href="/main/">Home</a></p>
+	{% else %}
+	{%bootstrap_css%}
+	<form method="post">
+		
+		{% csrf_token %}
+    	{%bootstrap_form form%}
+		
+		<button type="submit" class="btn btn-success">Войти</button>
+
+
+	</form>
+	{%endif%}
+</body>
+</body>
+</html>

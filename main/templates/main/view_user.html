@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<title></title>
+	<link rel="shortcut icon" href="{% static 'admin/img/favicon.ico' %}">
+</head>
+<body>
+	{%for bbs in bbs%}
+	<h2>{{bbs.song}}</h2>
+	<h4>{{bbs.artist}}</h4>
+	<audio src = {{bbs.add_mus.url}} controls></audio>
+	<a href="{%url 'main' %}">Main</a>
+	{%endfor%}
+</body>
+</body>
+</html>

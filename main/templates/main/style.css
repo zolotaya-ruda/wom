@@ -1,0 +1,160 @@
+body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content:flex-end;
+	align-items: ;
+	background:linear-gradient(#211f1f,#383838);
+
+}
+.button-hover {
+	position: relative;
+	min-width: 130px;
+	margin: 8px;
+	right : 200px;
+	padding: 0.25em;
+	background: linear-gradient(to right,#e1e444,#d67dcb);
+	border: 0;
+	cursor: pointer;
+	border-radius: 20px;
+}
+
+.button-hover::before,
+.button-hover::after{
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: linear-gradient(to right,#e1e444,#d67dcb);
+	border-radius: 20px;
+	transition: all .5s ease-in-out;
+
+}
+.button-hover:hover::before{
+	filter: blur(5px);
+}
+.button-hover:hover::after{
+	filter: blur(15px);
+}
+.button-hover:hover {
+	animation: hue 3s linear infinite;
+}
+@keyframes hue {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
+
+.button-hover span {
+	position: relative;
+	z-index: 3;
+	display: block;
+	padding: 1em;
+	font-family: "Neuton", sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+	color :white ;
+	text-transform: uppercase;
+	background-color: #1a191a;
+	border-radius: 17px;
+}
+
+
+.box{
+	
+  position: relative;
+  top: -95px;
+  left: -385px;
+  margin: 100px auto;
+  width: 300px;
+  height: 35px;
+  padding: 0.3em;
+  background: linear-gradient(#e1e444,#d67dcb);
+  padding: 0.23em;
+    border: 0;
+    cursor: pointer;
+    border-radius: 20em;
+}
+
+
+.container-1 input#search{
+ position: relative;
+  width: 300px;
+  height: 35px;
+  border: none;
+  font-size: 10pt;
+  float: right;
+  color: #f6f6f6;
+ 
+  background-color: #1a191a;
+
+  border-radius: 17em;
+transition: all .5s ease-in-out;
+
+
+}
+
+.box:hover::before{
+	filter: blur(5px);
+}
+.box:hover::after{
+	filter: blur(15px);
+}
+.box:hover {
+	animation: hue 3s linear infinite;
+}
+@keyframes hue {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
+.navbar{
+	top: 0px;
+	right: 1348px;
+	bottom: 0px;
+	width: 100%;
+	position: fixed;
+	background:linear-gradient(#181818,#424242);
+}
+.navbartwo{
+	top: 0px;
+	left: 1348px;
+	bottom: 0px;
+	width: 100%;
+	position: fixed;
+	background:linear-gradient(#181818,#424242);
+
+}
+.title{
+	text-indent:210px;
+	color: white;
+	margin-top :90px;
+	font-family: "Alfa Slab One", sans-serif;
+	font-size: 3.8em;
+
+}  
+
+.titletwo{
+	color: white;
+	margin-top :200px;
+	text-indent:-180px;
+	font-family: "Alfa Slab One", sans-serif;
+	font-size: 1.8em;
+}
+
+.section {
+  background-color: pink;
+  height: 1000px;
+  padding: 0 370px;
+}
+
+

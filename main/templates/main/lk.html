@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WOM</title>
+	<link rel="shortcut icon" href="{% static 'admin/img/favicon.ico' %}">
+  <link rel="stylesheet" href= "{% static 'admin/css/rdfv.css' %}">
+</head> 
+<body>
+ 
+  
+  <h1 class="forh1">Здравствуйте, {{request.user.username}}.</h1>
+
+</div>
+
+<header class="header">
+	<div class = 'bord'>
+		<div class="cont_int">
+
+      <div class="box">
+  <div class="container-1">
+    <form action="{% url 'search_results' %}" method="get">
+      <input name="q" type="search" id="search" placeholder="  Поиск по исполнителям ...  " >
+    </form>
+
+</div>
+</div>
+	  <div class="middle">
+		<button class ="button-hover">
+			<span> Правила </span>
+		</button>
+		<a href="{% url 'main' %}"><button class ="button-hover">
+			<span>  Главная </span>
+		</button>
+  </a>
+    </div>
+    
+</header>
+<div class="wel">
+
+</div>
+
+<div class="card">
+  <div class="upper"></div>
+       {% for opis in opis %}
+       <img class="profile-img" src="{{opis.img.url}}">
+       
+       <div class="details">
+           &nbsp; <i class="fa fa-map-marker" aria-hidden="true"></i>{{opis.city}}
+       </div>
+       <div class="item">
+        <span class="num">16</span>
+        <span class="word">Likes</span>
+       </div>
+       <h2> {{request.user.username}}<h2>
+       <h3> Исполнитель</h3>
+       <h4>О себе</h4>
+       <p> Курим жирный ножки биг бой!!!</p>
+       {% endfor %}
+        
+    <div class="postbutton">
+       <a class="button-hovers" href="#">Править
+    </a>
+
+        <a class="button-hovers" href="#">Выйти
+    </a>
+     
+  </div>
+</div>
+
+</body>
+</html>
